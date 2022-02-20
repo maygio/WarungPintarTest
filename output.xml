@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20220220 22:35:04.230" rpa="false" schemaversion="2">
+<suite id="s1" name="Exercise2" source="C:\Users\mayan\WarungPintar\Test Case\Exercise2.robot">
+<test id="s1-t1" name="Exercise2">
+<kw name="Go to ebay" library="PageObject2">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220220 22:35:04.524" level="INFO">Opening browser 'chrome' to base url 'https://www.ebay.com/'.</msg>
+<status status="PASS" starttime="20220220 22:35:04.524" endtime="20220220 22:35:08.570"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="Selenium2Library">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220220 22:35:08.571" endtime="20220220 22:35:08.575"/>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220220 22:35:08.575" endtime="20220220 22:35:08.709"/>
+</kw>
+<status status="PASS" starttime="20220220 22:35:04.524" endtime="20220220 22:35:08.709"/>
+</kw>
+<kw name="Type any search string in the search bar. For example: MacBook." library="PageObject2">
+<kw name="Click Element" library="Selenium2Library">
+<arg>${SearchBox}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220220 22:35:08.711" level="INFO">Clicking element '//div[@id="gh-ac-box2"]//descendant::input'.</msg>
+<status status="PASS" starttime="20220220 22:35:08.710" endtime="20220220 22:35:08.857"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>${SearchBox}</arg>
+<arg>${SearchValue}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220220 22:35:08.858" level="INFO">Typing text 'macbook' into text field '//div[@id="gh-ac-box2"]//descendant::input'.</msg>
+<status status="PASS" starttime="20220220 22:35:08.857" endtime="20220220 22:35:08.944"/>
+</kw>
+<status status="PASS" starttime="20220220 22:35:08.710" endtime="20220220 22:35:08.944"/>
+</kw>
+<kw name="Change the Search category. For example: Computers/Tablets &amp; Networking and click Search." library="PageObject2">
+<kw name="Click Element" library="Selenium2Library">
+<arg>${AllCategories}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220220 22:35:08.946" level="INFO">Clicking element '//div[@id="gh-cat-box"]//descendant::select'.</msg>
+<status status="PASS" starttime="20220220 22:35:08.945" endtime="20220220 22:35:09.183"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220220 22:35:11.184" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220220 22:35:09.183" endtime="20220220 22:35:11.184"/>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<arg>${AllCategories}</arg>
+<arg>58058</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20220220 22:35:11.185" level="INFO">Selecting options from selection list '//div[@id="gh-cat-box"]//descendant::select' by value 58058.</msg>
+<status status="PASS" starttime="20220220 22:35:11.184" endtime="20220220 22:35:11.274"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220220 22:35:13.276" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220220 22:35:11.274" endtime="20220220 22:35:13.276"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>${SearchButton}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220220 22:35:13.277" level="INFO">Clicking element '//input[@id="gh-btn"]'.</msg>
+<status status="PASS" starttime="20220220 22:35:13.276" endtime="20220220 22:35:16.123"/>
+</kw>
+<status status="PASS" starttime="20220220 22:35:08.945" endtime="20220220 22:35:16.123"/>
+</kw>
+<kw name="Verify that the page loads completely." library="PageObject2">
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<arg>${AllListing}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20220220 22:35:16.243" level="INFO">Element '//div[@class="srp-controls__control--responsive"]/descendant::span[1]' is displayed.</msg>
+<status status="PASS" starttime="20220220 22:35:16.125" endtime="20220220 22:35:16.243"/>
+</kw>
+<status status="PASS" starttime="20220220 22:35:16.125" endtime="20220220 22:35:16.244"/>
+</kw>
+<kw name="Verify that the first result name matches with the search string" library="PageObject2">
+<kw name="Get Text" library="Selenium2Library">
+<var>${MacBookText}</var>
+<arg>${FirstResult}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220220 22:35:16.877" level="INFO">${MacBookText} = APPLE MACBOOK PRO 13 | MacOS 2019 CATALINA | 16GB RAM | 1TB SSD | 2.5GHz
+HOLIDAY SALE + FAST FREE 2 DAY SHIPPING + WARRANTY
+Pre-Owned · 2012 · 13.3 in · 1 TB
+IDR7,643,428.57
+Was:
+Previous Price
+IDR8,4...</msg>
+<status status="PASS" starttime="20220220 22:35:16.246" endtime="20220220 22:35:16.879"/>
+</kw>
+<kw name="Convert To Lower Case" library="String">
+<var>${LowerMacBookText}</var>
+<arg>${MacBookText}</arg>
+<doc>Converts string to lower case.</doc>
+<msg timestamp="20220220 22:35:16.880" level="INFO">${LowerMacBookText} = apple macbook pro 13 | macos 2019 catalina | 16gb ram | 1tb ssd | 2.5ghz
+holiday sale + fast free 2 day shipping + warranty
+pre-owned · 2012 · 13.3 in · 1 tb
+idr7,643,428.57
+was:
+previous price
+idr8,4...</msg>
+<status status="PASS" starttime="20220220 22:35:16.879" endtime="20220220 22:35:16.880"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LowerMacBookText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220220 22:35:16.880" endtime="20220220 22:35:16.884"/>
+</kw>
+<kw name="Should Contain Any" library="BuiltIn">
+<arg>${LowerMacBookText}</arg>
+<arg>${SearchValue}</arg>
+<doc>Fails if ``container`` does not contain any of the ``*items``.</doc>
+<status status="PASS" starttime="20220220 22:35:16.884" endtime="20220220 22:35:16.885"/>
+</kw>
+<status status="PASS" starttime="20220220 22:35:16.246" endtime="20220220 22:35:16.885"/>
+</kw>
+<kw name="Close the browser" library="PageObject2">
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220220 22:35:16.886" endtime="20220220 22:35:19.303"/>
+</kw>
+<status status="PASS" starttime="20220220 22:35:16.885" endtime="20220220 22:35:19.303"/>
+</kw>
+<status status="PASS" starttime="20220220 22:35:04.523" endtime="20220220 22:35:19.305"/>
+</test>
+<status status="PASS" starttime="20220220 22:35:04.233" endtime="20220220 22:35:19.306"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Exercise2">Exercise2</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
